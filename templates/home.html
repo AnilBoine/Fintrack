@@ -1,0 +1,49 @@
+
+{% extends "base.html" %}
+
+{% block title %}FinTrack{% endblock %}
+
+{% block content %}
+<h2>Welcome to the Finance Calculator</h2>
+{% if user.is_authenticated %}
+    <p>Hello, {{ user.username }}!</p>
+    <a href="{% url 'logout' %}">Logout</a>
+{% else %}
+    <p>You are not logged in.</p>
+    <a href="{% url 'login' %}">Login</a> or <a href="{% url 'signup' %}">Sign Up</a>
+
+{% endif %}
+<hr>
+    <section class="section">
+        <h2>Unlock Financial Clarity and Control</h2>
+        <p>At FinTrack, we believe managing your finances should be as easy as pie. Whether you're budgeting for a big purchase, tracking your monthly expenses, or planning for retirement, our intuitive tools are here to guide you every step of the way.</p>
+    </section>
+
+    <section class="section">
+        <h2>What We Offer:</h2>
+        <ul>
+            <li><strong>Powerful Finance Calculators:</strong> From loan amortization to investment growth projections, our calculators help you make informed decisions with ease.</li>
+            <li><strong>Smart Money Tracking:</strong> Keep tabs on your spending, savings, and investments with our user-friendly tracking features. Visualize your financial health at a glance!</li>
+            <li><strong>Budgeting Tools:</strong> Create and manage personalized budgets effortlessly. Set goals, track progress, and stay on top of your financial game.</li>
+            <li><strong>Interactive Reports:</strong> Get detailed insights and actionable recommendations based on your financial data. Make smarter decisions with confidence.</li>
+            <li><strong>Secure and Private:</strong> Your financial data is important. We use top-notch security measures to ensure your information is safe and confidential.</li>
+        </ul>
+    </section>
+
+    <section class="section">
+        <h2>Why Choose FinTrack?</h2>
+        <ul>
+            <li><strong>User-Friendly Interface:</strong> Our tools are designed to be intuitive and easy to use, so you can focus on what matters most – achieving your financial goals.</li>
+            <li><strong>Comprehensive Features:</strong> We offer a complete suite of tools to manage and optimize every aspect of your financial life.</li>
+            <li><strong>Expert Advice:</strong> Access tips and guidance from financial experts to help you make the most of our tools and strategies.</li>
+            <li><strong>Free Access:</strong> Get started today with our basic features at no cost. Upgrade to premium for advanced functionalities and personalized support.</li>
+        </ul>
+    </section>
+
+    <section class="section">
+        <h2>Join the FinTrack Community</h2>
+        <p>Take control of your financial future with confidence. Explore our website, start using our calculators and trackers, and see how FinTrack can help you achieve your financial goals.</p>
+        <a href="#" class="cta-button">Get Started Now</a>
+    </section>
+
+{% endblock %}

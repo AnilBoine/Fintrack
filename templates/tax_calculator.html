@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block title %}Tax Calculator{% endblock %}
+
+{% block content %}
+<h2>Tax Calculator</h2>
+<form method="post">
+    {% csrf_token %}
+    <input type="number" name="income" placeholder="Annual Income" required>
+    <button type="submit">Calculate Tax</button>
+</form>
+{% if tax %}
+    <h2>Your Tax: {{ tax }}</h2>
+{% endif %}
+{% endblock %}
